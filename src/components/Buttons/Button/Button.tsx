@@ -1,28 +1,12 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { Actionable } from 'src/core';
 
-export enum ButtonStyle {
+import { Props } from './_interfaces';
 
-  /**
-   * Default button style.
-   */
-  Default = 'pulse-button-default'
-}
-
-export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-
-  /**
-   * React node
-   */
-  children?: React.ReactNode;
-
-  /**
-   * Specifies whether the component is disabled.
-   * @default false
-   */
-  disabled?: boolean;
-}
+import './Button.scss';
 
 /**
  * Pulse button component.
@@ -31,17 +15,25 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  * @pulse-component Button
  */
 const _Button = ({
+  buttonStyle,
+  children,
+  classes,
   forwardedRef,
   ...rest
 }: Props & { forwardedRef: React.Ref<HTMLButtonElement> }) => {
 
   const props = {
-    ...rest
+    ...rest,
+    className: classNames(
+      'pulse-button',
+      buttonStyle,
+      classes && classes.length && classes.join(' ')
+    )
   };
 
   return (
     <Actionable { ...props } ref={forwardedRef} >
-      {props.children}
+      {children}
     </Actionable>
   );
 };
@@ -53,3 +45,4 @@ const ForwardedButton = (props: Props, ref: React.Ref<HTMLButtonElement>) => {
 ForwardedButton.displayName = 'forwarded(Button)';
 
 export const Button = React.forwardRef(ForwardedButton);
+export * from './_interfaces';

@@ -9,6 +9,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "rootDirs": ["src", "stories"],
     "sourceMap": true,
     "target": "esnext",
     "paths": {

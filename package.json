@@ -20,6 +20,7 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.18",
+    "@types/classnames": "^2.2.10",
     "@types/enzyme": "^3.10.4",
     "@types/jest": "^25.1.1",
     "@types/node": "^13.7.0",
@@ -59,6 +60,7 @@
     "webpack-merge": "4.2.2"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "typescript": "^3.7.5"

@@ -2,36 +2,13 @@ import * as React from 'react';
 
 import { mergeRefs } from './utils';
 
-type DefaultProps = typeof defaultProps;
-type BaseProps = Pick<React.HTMLAttributes<any>, 'children'> & React.RefAttributes<any>
-type Props = Readonly<BaseProps & {
-
-  /**
-   * Click event handler.
-   */
-  onClick?: React.MouseEventHandler
-} & DefaultProps>
-
-const defaultProps = {
-
-  /**
-   * Sets the element's `aria-disabled` attribute.
-   * @default false
-   */
-  disabled: false,
-
-  /**
-   * Sets the underlying DOM element tag.
-   * @default "button"
-   */
-  from: 'button' as keyof JSX.IntrinsicElements | React.ComponentType<any>
-};
+import { Props, defaultProps, DefaultProps } from './_interfaces';
 
 const _Actionable = ({
   disabled,
-  forwardedRef,
   from: Component,
-  // handlers
+  focusable,
+  forwardedRef,
   onClick,
   ...rest
 }: Props & { forwardedRef: React.Ref<HTMLElement> }) => {
@@ -54,9 +31,10 @@ const _Actionable = ({
   );
 
   const props = {
-    ...rest,
     ref,
+    disabled,
     onClick: handleClick,
+    ...rest
   };
 
   return <Component {...props} />
