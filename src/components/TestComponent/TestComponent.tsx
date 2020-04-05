@@ -12,7 +12,9 @@ export const TestComponent = () => {
 
   return (
     <div>
-      <Heading el={NodeType.H2}>
+      <Heading
+        el={NodeType.H2}
+      >
         Some title text
       </Heading>
     </div>
