@@ -4,6 +4,12 @@ import { mergeRefs } from './utils';
 
 import { Props, defaultProps, DefaultProps } from './_interfaces';
 
+/**
+ * Pulse Actionable Component
+ * Returns a button element by default with encapsulated functionality.
+ *
+ * @pulse-component Actionable
+ */
 const _Actionable = ({
   disabled,
   from: Component,

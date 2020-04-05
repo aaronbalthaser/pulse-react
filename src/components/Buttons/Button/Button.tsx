@@ -4,9 +4,9 @@ import classNames from 'classnames';
 
 import { Actionable } from 'src/core';
 
-import { Props } from './_interfaces';
+import { ButtonProps, ButtonStyle } from './_interfaces';
 
-import './Button.scss';
+// import './Button.scss';
 
 /**
  * Pulse button component.
@@ -20,12 +20,12 @@ const _Button = ({
   classes,
   forwardedRef,
   ...rest
-}: Props & { forwardedRef: React.Ref<HTMLButtonElement> }) => {
+}: ButtonProps & { forwardedRef: React.Ref<HTMLButtonElement> }) => {
 
   const props = {
     ...rest,
     className: classNames(
-      'pulse-button',
+      ButtonStyle.Shared,
       buttonStyle,
       classes && classes.length && classes.join(' ')
     )
@@ -38,8 +38,8 @@ const _Button = ({
   );
 };
 
-const ForwardedButton = (props: Props, ref: React.Ref<HTMLButtonElement>) => {
-  return <_Button {...props} forwardedRef={ref} />;
+const ForwardedButton = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+  return <_Button { ...props } forwardedRef={ref} />;
 };
 
 ForwardedButton.displayName = 'forwarded(Button)';

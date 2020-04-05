@@ -3,7 +3,7 @@ import * as React from 'react';
 /**
  * Interfaces
  */
-export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
   /**
    * Custom class names.
@@ -57,6 +57,11 @@ export enum ButtonType {
 }
 
 export enum ButtonStyle {
+
+  /**
+   * Shared
+   */
+  Shared = 'pulse-button',
 
   /**
    * Primary button style.

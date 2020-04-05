@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, ButtonStyle, ButtonType } from 'src/components';
+import { Heading, NodeType } from 'src/components';
 
 export const TestComponent = () => {
   const btnRef = React.useRef(null);
@@ -12,15 +12,9 @@ export const TestComponent = () => {
 
   return (
     <div>
-      <Button
-        ref={btnRef}
-        onClick={onClickHandler}
-        type={ButtonType.Button}
-        buttonStyle={ButtonStyle.Default}
-        classes={['special-class']}
-      >
-        <p>😀 😎 👍 💯</p>
-      </Button>
+      <Heading el={NodeType.H2}>
+        Some title text
+      </Heading>
     </div>
   );
 };

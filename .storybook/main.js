@@ -1,18 +1,19 @@
 const webpackConfig = require('../webpack/webpack.development.config');
 
 module.exports = {
-  stories: ['../stories/**/*.stories.js'],
-  addons: ['' +
-    '@storybook/addon-actions',
-    '@storybook/addon-links',
-    '@storybook/preset-typescript'
-  ], webpackFinal: async config => {
+  stories: ['../stories/**/*.stories.tsx'],
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [['react-app', { flow: false, typescript: true }]],
+      },
+    });
 
-    /**
-     * add main project alias's to storybook webpack configuration.
-     */
     config.resolve.alias = { ...config.resolve.alias, ...webpackConfig.resolve.alias };
+    config.resolve.extensions.push('.ts', '.tsx');
 
     return config;
-  },
+  }
 };
