@@ -77,3 +77,11 @@ El prop takes in a string value of type ***NodeType***. NodeType ranges from ***
 ```$xslt
 import { Heading, NodeType } from 'src/components';
 ```
+
+---
+---
+---
+
+### Notes:
+
+1. Currently the component allows for a ref to be added and will be forwarded to the heading element. This feature may be removed if there is no practical use case determined.
