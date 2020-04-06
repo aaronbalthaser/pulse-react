@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { ElementType } from 'src/core';
 
-import { NodeType, HeadingProps, HeadingStyle } from 'src/components';
+import { NodeType, HeadingProps, HeadingClasses } from 'src/components';
 
 /**
  * Pulse Heading Component.
@@ -21,16 +21,13 @@ const _Heading = ({
 }: HeadingProps & { forwardedRef: React.Ref<HTMLHeadingElement> }) => {
 
   const htmlElement = el ? el : NodeType.H1;
-  const headingDefaultClass = HeadingStyle[htmlElement]
-    ? HeadingStyle[htmlElement]
-    : HeadingStyle[NodeType.H1];
 
   const props = {
     ...rest,
     from: htmlElement,
     className: classNames(
-      HeadingStyle.Shared,
-      headingDefaultClass,
+      HeadingClasses.Shared,
+      HeadingClasses[htmlElement],
       classes && classes.length && classes.join(' ')
     )
   };
