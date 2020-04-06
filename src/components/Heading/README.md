@@ -13,8 +13,9 @@ h1 h2 h3 h4 h5 h6
 ### Props (Optional)
 |Prop   	|Default   	|Type    |Description  	
 |---	|---	|---	|---	|
-|el   	|h1   	|string    |Specifies the heading h1 thru h6   	
+|classHooks    |disabled    |boolean    |Sets the default class hooks to the element	
 |classes   	|none   	|array   	|Adds custom class/s to the element 
+|el   	|h1   	|string    |Specifies the heading h1 thru h6  
 
 ---
 
@@ -27,11 +28,52 @@ export const Page = ({title, classList}) => {
 
   return (
     <Heading
-      el={NodeType.H3}
+      el={NodeType.H2}
       classes={classes}
     >
       {title}
     </Heading>
   );
 };
+```
+---
+---
+---
+
+#### classHooks 
+If classHooks is set the component renders the following HTML markup and adds the two default classes which contain minimal and opinionated styles.
+
+```$xslt
+<h2 class="pulse-heading pulse-h2">Some title text</h2>
+```
+
+---
+
+#### classes 
+When class names are added to the classes prop array, those class names are added to the elements class list.
+
+```$xslt
+const customClassList = ['one', 'two', 'three'];
+
+<Heading
+  el={NodeType.H2}
+  classes={customClassList}
+>
+  {title}
+</Heading>
+
+Renders:
+
+<h2 class="pulse-heading pulse-h2 one two three">Some title text</h2>
+```
+
+---
+
+#### el 
+El prop takes in a string value of type ***NodeType***. NodeType ranges from ***NodeType.H1 thru NodeType.H6***. If no value is passed into el prop the component will return the h1 element by default. NodeType type def can be imported from the components directory.
+
+
+
+```$xslt
+import { Heading, NodeType } from 'src/components';
 ```

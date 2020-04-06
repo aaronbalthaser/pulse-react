@@ -14,6 +14,8 @@ export const TestComponent = () => {
     <div>
       <Heading
         el={NodeType.H2}
+        classHooks
+        classes={['one', 'two', 'three']}
       >
         Some title text
       </Heading>

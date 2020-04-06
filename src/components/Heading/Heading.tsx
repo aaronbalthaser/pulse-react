@@ -15,6 +15,7 @@ import { NodeType, HeadingProps, HeadingClasses } from 'src/components';
 const _Heading = ({
   children,
   classes,
+  classHooks,
   el,
   forwardedRef,
   ...rest
@@ -26,8 +27,8 @@ const _Heading = ({
     ...rest,
     from: htmlElement,
     className: classNames(
-      HeadingClasses.Shared,
-      HeadingClasses[htmlElement],
+      classHooks && HeadingClasses.Shared,
+      classHooks && HeadingClasses[htmlElement],
       classes && classes.length && classes.join(' ')
     )
   };

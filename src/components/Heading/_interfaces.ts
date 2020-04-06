@@ -9,6 +9,12 @@ export interface HeadingProps extends React.HtmlHTMLAttributes<HTMLBaseElement> 
   classes?: string[];
 
   /**
+   * Default class hooks
+   * @default none
+   */
+  classHooks?: boolean;
+
+  /**
    * Element type.
    */
   el?: NodeType;
