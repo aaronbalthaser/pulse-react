@@ -31,8 +31,11 @@ const _Actionable = ({
 
         return;
       }
+      
+      if (onClick) {
+        onClick(event);
+      }
 
-      onClick(event);
     }, [disabled, onClick]
   );
 
