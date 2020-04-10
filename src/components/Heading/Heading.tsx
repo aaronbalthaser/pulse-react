@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { ElementType } from 'src/core';
 
-import { NodeType, HeadingProps, HeadingClasses } from 'src/components';
+import { HeadingNodeType, HeadingProps, HeadingClasses } from 'src/components';
 
 /**
  * Pulse Heading Component.
@@ -21,7 +21,7 @@ const _Heading = ({
   ...rest
 }: HeadingProps & { forwardedRef: React.Ref<HTMLHeadingElement> }) => {
 
-  const htmlElement = el ? el : NodeType.H1;
+  const htmlElement = el ? el : HeadingNodeType.H1;
 
   const props = {
     ...rest,
@@ -46,5 +46,6 @@ const ForwardedHeading = (props: HeadingProps, ref: React.Ref<HTMLHeadingElement
 
 ForwardedHeading.displayName = 'forwarded(Heading)';
 
-export const Heading = React.forwardRef(ForwardedHeading);
 export * from './_interfaces';
+
+export const Heading = React.forwardRef(ForwardedHeading);

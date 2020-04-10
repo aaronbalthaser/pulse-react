@@ -17,10 +17,10 @@ export interface HeadingProps extends React.HtmlHTMLAttributes<HTMLBaseElement> 
   /**
    * Element type.
    */
-  el?: NodeType;
+  el?: HeadingNodeType;
 }
 
-export enum NodeType {
+export enum HeadingNodeType {
 
   /**
    * Node types.

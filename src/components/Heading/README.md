@@ -21,14 +21,14 @@ h1 h2 h3 h4 h5 h6
 
 ### Usage
 ```
-import { Heading, NodeType } from 'src/components';
+import { Heading, HeadingNodeType } from 'src/components';
 
 export const Page = ({title, classList}) => {
   const [classes, setClasses] = React.useState([...classList]);
 
   return (
     <Heading
-      el={NodeType.H2}
+      el={HeadingNodeType.H2}
       classes={classes}
     >
       {title}
@@ -56,7 +56,7 @@ When class names are added to the classes prop array, those class names are adde
 const customClassList = ['one', 'two', 'three'];
 
 <Heading
-  el={NodeType.H2}
+  el={HeadingNodeType.H2}
   classes={customClassList}
 >
   {title}
@@ -70,15 +70,14 @@ Renders:
 ---
 
 #### el 
-El prop takes in a string value of type ***NodeType***. NodeType ranges from ***NodeType.H1 thru NodeType.H6***. If no value is passed into el prop the component will return the h1 element by default. NodeType type def can be imported from the components directory.
+El prop takes in a string value of type ***HeadingNodeType***. HeadingNodeType ranges from ***HeadingNodeType.H1 thru HeadingNodeType.H6***. If no value is passed into el prop the component will return the h1 element by default. HeadingNodeType type def can be imported from the components directory.
 
 
 
 ```$xslt
-import { Heading, NodeType } from 'src/components';
+import { Heading, HeadingNodeType } from 'src/components';
 ```
 
----
 ---
 ---
 
